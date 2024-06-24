@@ -11,6 +11,12 @@ class NewsWebViewActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityNewsWebViewBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val newsUrl = intent.getStringExtra(NEWS_URL)
+
+        if (newsUrl != null) {
+            binding.webview.loadUrl(newsUrl)
+        }
     }
 
     companion object {
